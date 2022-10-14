@@ -1,0 +1,83 @@
+////
+/// Utilities
+/// @group base
+////
+
+
+@mixin screenreader-only {
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.sr-only {
+    @include screenreader-only();
+}
+
+@mixin sr-only--focusable {
+    &:active,
+    &:focus,
+    &:focus-within {
+        clip: auto;
+        height: auto;
+        margin: 0;
+        overflow: visible;
+        position: static;
+        width: auto;
+    }
+}
+
+.sr-only--focusable {
+    @include sr-only--focusable();
+}
+
+@mixin shadow() {
+    background-color: rgba(30, 30, 30, 0.5);
+    bottom: 0;
+    display: none;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: z-index('veil');
+
+    &[data-on='true'] {
+        display: block;
+    }
+}
+
+@mixin default-margin() {
+    margin-left: $measure--basic;
+    margin-right: $measure--basic;
+    max-width: $width--max;
+
+    @include media('>between') {
+        margin-left: $measure--small2;
+        margin-right: $measure--small2;
+    }
+}
+
+@mixin default-padding() {
+    padding-left: $measure--small2;
+    padding-right: $measure--small2;
+
+    @include media('>between') {
+        padding-left: $measure--small4;
+        padding-right: $measure--small4;
+    }
+}
+
+@mixin standard-box() {
+    @include default-margin();
+    @include default-padding();
+
+    @include media('>large') {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

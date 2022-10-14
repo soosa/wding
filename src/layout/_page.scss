@@ -1,0 +1,52 @@
+////
+/// Page
+/// @group base
+////
+html {
+    background-color: $color-bg;
+    color: $color-text;
+    box-sizing: border-box;
+    min-height: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+
+    @include media('reducemotion') {
+        scroll-behavior: auto;
+    }
+}
+
+body {
+    min-height: 100vh;
+    position: relative;
+    scroll-behavior: smooth;
+
+    @include media('reducemotion') {
+        scroll-behavior: auto;
+    }
+    height:2000px;
+}
+
+main {
+    @include media('>=small') {
+        @include standard-grid();
+    }
+}
+
+article {
+    @include default-padding();
+    @include media('>=small') {
+        grid-column: 1/-1;
+    }
+}
+
+.overlay {
+    background-color: $color-overlay-red;
+    opacity: 0.3;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    z-index: 1;
+}
