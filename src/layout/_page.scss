@@ -34,7 +34,6 @@ main {
 }
 
 article {
-    @include default-padding();
     @include media('>=small') {
         grid-column: 1/-1;
     }
