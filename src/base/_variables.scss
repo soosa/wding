@@ -1,0 +1,112 @@
+////
+/// Variables
+/// @group abstracts
+////
+/// @type Length
+$width--tiny: 375px !default;
+/// @type Length
+$width--mobile: 432px !default;
+/// @type Length
+$width--tablet: 768px !default;
+/// @type Length
+$width--between: 900px !default;
+/// @type Length
+$width--small: 1024px !default;
+/// @type Length
+$width--desktop: 1280px !default;
+/// @type Length
+$width--large: 1440px !default;
+/// @type Length
+$width--1080p: 1920px !default;
+/// @type Length
+$width--4K: 3840px !default;
+/// @type Length
+$width--8K: 7680px !default;
+
+$breakpoints: (
+    'tiny': $width--tiny,
+    'mobile': $width--mobile,
+    'tablet': $width--tablet,
+    'between': $width--between,
+    'small': $width--small,
+    'desktop': $width--desktop,
+    'large': $width--large,
+    '1080p': $width--1080p,
+    '4K': $width--4K,
+    '8K': $width--8K,
+) !default;
+
+$media-expressions: (
+    'hover': '(hover: hover)',
+    'nohover': '(hover: nohover)',
+    'print': 'print',
+    'reducemotion': '(prefers-reduced-motion: reduce)',
+    'screen': 'screen',
+) !default;
+
+/// @type Length
+$border-width-hairline: 0.0625rem !default;
+/// @type Length
+$border-width-default: 0.125rem !default;
+/// @type Length
+$border-width-thick: 0.1875rem !default;
+/// @type Length
+$border-width-thicker: 0.25rem !default;
+
+/// @type Map
+/// @prop {String} key - z-index name
+/// @prop {Number} value - z-index value
+/// @see {Function} z-index
+$z-indexes: (
+    'below': -1,
+    'default': 0,
+    'above': 1,
+    'shadow': 3,
+    'navigation': 4,
+    'modal': 5,
+) !default;
+
+/// @type Length
+$measure--quarter: 0.25rem !default;
+/// @type Length
+$measure--half: 0.5rem !default;
+/// @type Length
+$measure--threequarters: 0.75rem !default;
+/// @type Length
+$measure--basic: 1rem !default;
+/// @type Length
+$measure--small1: 1.25rem !default;
+/// @type Length
+$measure--small2: 1.5rem !default;
+/// @type Length
+$measure--small3: 1.75rem !default;
+/// @type Length
+$measure--small4: 2rem !default;
+/// @type Length
+$measure--small5: 2.25rem !default;
+/// @type Length
+$measure--medium1: 2.5rem !default;
+/// @type Length
+$measure--medium2: 2.75rem !default;
+/// @type Length
+$measure--medium3: 3rem !default;
+/// @type Length
+$measure--medium4: 3.25rem !default;
+/// @type Length
+$measure--medium5: 3.5rem !default;
+/// @type Length
+$measure--medium6: 3.75rem !default;
+/// @type Length
+$measure--medium7: 4rem !default;
+/// @type Length
+$measure--medium8: 4.25rem !default;
+/// @type Length
+$measure--medium9: 4.5rem !default;
+/// @type Length
+$measure--medium10: 4.75rem !default;
+/// @type Length
+$measure--medium11: 5rem !default;
+/// @type Length
+$measure--large1: 5.5rem !default;
+
+$width--max: 80rem !default;

@@ -1,0 +1,15 @@
+@import '../base/color_base';
+
+
+/// @type Color
+$color-bg: #fff !default;
+/// @type Color
+$color-text: $color-nearblack !default; 
+/// @type Color
+$color-text--caption: $color-mid-grey !default;
+/// @type Color
+$color-anchor: $color-text !default;
+/// @type Color
+$color-highlight: $color-flamingo !default;
+/// @type Color
+$color-overlay-red: $color-burgundy !default;

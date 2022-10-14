@@ -1,0 +1,27 @@
+@import 'anchor_reset';
+
+@mixin anchor-inline(){
+    color: $color-anchor;
+    border-bottom-color: $color-anchor;
+    border-bottom-width: $border-width-default;
+    border-bottom-style: $border-style-default;
+    text-decoration: none;
+
+    &:hover {
+        background-color: $color-anchor;
+        color: contrasting-color($color-anchor);
+    }
+
+    &:focus {
+        outline: $border-width-outline $border-style-default $color-black;
+    }
+
+    &:active {
+        outline: $border-width-default $border-style-alternate $color-black;
+    }
+}
+
+
+a {
+    @include anchor-reset();
+}
