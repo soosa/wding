@@ -18,11 +18,18 @@
 
 }
 
-// .banner__card {
-// }
+.banner__card {
+    position: absolute;
+    top:4rem;
+    left: 50%;
+    background-color: white;
+    z-index: 3;
+}
 
-// .banner__card__img {
-// }
+.banner__card__img {
+    margin-left: auto;
+    margin-right: auto;
+}
 
 .banner__card__txt {
     text-align: center;
