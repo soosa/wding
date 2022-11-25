@@ -1,6 +1,6 @@
 @font-face {
-    font-family: 'OldStandardTT';
-    src: url('../assets/OldStandardTT-Regular.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+    font-family: 'Overpass';
+    src: url('../assets/Overpass-VariableFont_wght.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
 }  
 // https://rey-fluid-demo.squarespace.com/?nochrome=true
 
@@ -11,10 +11,9 @@ h4,
 h5,
 h6,
 .heading-style {
-    font-family: 'OldStandardTT', Fallback, sans-serif;
-    color: $color-highlight;
+    font-family: 'Overpass', Fallback, sans-serif;
 }
 
 p {
-    font-family: Helvetica, sans-serif;
+    font-family: 'Overpass', Fallback, sans-serif;
 }

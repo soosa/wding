@@ -19,12 +19,6 @@ html {
 body {
     min-height: 100vh;
     position: relative;
-    scroll-behavior: smooth;
-
-    @include media('reducemotion') {
-        scroll-behavior: auto;
-    }
-    height:2000px;
 }
 
 main {
@@ -37,15 +31,4 @@ article {
     @include media('>=small') {
         grid-column: 1/-1;
     }
-}
-
-.overlay {
-    background-color: $color-overlay-red;
-    opacity: 0.3;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    position: absolute;
-    z-index: 1;
 }

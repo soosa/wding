@@ -1,39 +1,22 @@
 // .banner {
 // }
 
-.banner__bg {
-    max-height: 520px;
-    height: 100%;
-    position: relative;
+.banner__img {
+    max-height: 120px;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 1440px;
 }
 
-.banner__bg__img {
-    position: relative;
-    min-width: 100%;
-    max-width: 100%;
-    min-height: 100%;
-    height: auto;
-    display: block;
-    overflow: hidden;
-
+.banner__text {
+    margin: 0 auto 0 auto;
+    line-height: 1;
+    font-size: 52px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 8px;
 }
 
-.banner__card {
-    position: absolute;
-    top:4rem;
-    left: 50%;
-    background-color: white;
-    z-index: 3;
-}
+.banner__text__heading {
 
-.banner__card__img {
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.banner__card__txt {
-    text-align: center;
-    z-index: 2;
-
-    @include default-padding();
 }

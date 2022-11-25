@@ -2,14 +2,12 @@
 
 
 /// @type Color
-$color-bg: #fff !default;
+$color-bg: $color-lightpink !default;
 /// @type Color
-$color-text: $color-nearblack !default; 
+$color-text: $color-midgrey !default; 
 /// @type Color
 $color-text--caption: $color-mid-grey !default;
 /// @type Color
 $color-anchor: $color-text !default;
 /// @type Color
 $color-highlight: $color-flamingo !default;
-/// @type Color
-$color-overlay-red: $color-burgundy !default;
