@@ -108,5 +108,34 @@ $measure--medium10: 4.75rem !default;
 $measure--medium11: 5rem !default;
 /// @type Length
 $measure--large1: 5.5rem !default;
-
+/// @type Length
 $width--max: 80rem !default;
+
+/// @type Number
+$font-weight-hairline: 100 !default;
+/// @type Number
+$font-weight-thin: 200 !default;
+/// @type Number
+$font-weight-light: 300 !default;
+/// @type Number
+$font-weight-normal: 400 !default;
+/// @type Number
+$font-weight-text: 450 !default;
+/// @type Number
+$font-weight-book: 500 !default;
+/// @type Number
+$font-weight-medium: 600 !default;
+/// @type Number
+$font-weight-bold: 700 !default;
+/// @type Number
+$font-weight-black: 800 !default;
+/// @type Number
+$font-weight-extrablack: 900 !default;
+
+/// @type Length
+$heading-margin: $measure--basic !default;
+/// @type Length
+$content-element-margin: $measure--threequarters !default;
+
+/// @type Length
+$max-component-line-length: 40ch !default;
