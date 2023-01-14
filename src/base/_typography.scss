@@ -1,8 +1,25 @@
 @font-face {
-    font-family: 'OldStandardTT';
-    src: url('../assets/OldStandardTT-Regular.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+    font-family: 'Overpass';
+    font-weight: $font-weight-normal;;
+    font-display: swap;
+    src: url('../assets/fonts/Overpass-VariableFont_wght.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+}   
+
+@font-face {
+    font-family: 'Mrdehaviland';
+    font-weight: $font-weight-normal;;
+    font-display: swap;
+    src: url('../assets/fonts/MrDeHaviland-Regular.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+}
+@font-face {
+    font-family: 'Garamond';
+    font-weight: $font-weight-normal;;
+    font-display: swap;
+    src: url('../assets/fonts/EBGaramond-VariableFont_wght.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
 }  
 // https://rey-fluid-demo.squarespace.com/?nochrome=true
+
+
 
 h1,
 h2,
@@ -11,10 +28,658 @@ h4,
 h5,
 h6,
 .heading-style {
-    font-family: 'OldStandardTT', Fallback, sans-serif;
-    color: $color-highlight;
+    font-family: 'Garamond', Fallback, sans-serif;
 }
 
 p {
-    font-family: Helvetica, sans-serif;
+    font-family: 'Garamond', Fallback, sans-serif;
 }
+
+.havi {
+    font-family: 'Mrdehaviland', Fallback, sans-serif;
+    font-size: $font-size-banner;
+}
+
+
+
+// /// @type Map
+// /// @prop {String} family - Font Family
+// /// @prop {String} name - Font Name
+// /// @prop {String} style - Font Style
+// /// @prop {Number} weight - Font Weight
+// /// @prop {String} filename - Font Filepath and Filename
+// $font-families-styles: (
+//     'Meta Sans': (
+//         ('Hairline', normal, $font-weight-hairline, 'ff-meta-w06-hairline'),
+//         ('Thin', normal, $font-weight-thin, 'ff-meta-w06-thin'),
+//         ('Light', normal, $font-weight-light, 'ff-meta-w06-light'),
+//         ('Normal', normal, $font-weight-normal, 'ff-meta-w06-normal'),
+//         ('Book', normal, $font-weight-book, 'ff-meta-w06-book'),
+//         ('Medium', normal, $font-weight-medium, 'ff-meta-w06-medium'),
+//         ('Bold', normal, $font-weight-bold, 'ff-meta-w06-bold'),
+//         ('Black', normal, $font-weight-black, 'ff-meta-w06-black'),
+//         (
+//             'Hairline Italic',
+//             italic,
+//             $font-weight-hairline,
+//             'ff-meta-w06-hairline-italic'
+//         ),
+//         ('Thin Italic', italic, $font-weight-thin, 'ff-meta-w06-thin-italic'),
+//         (
+//             'Light Italic',
+//             italic,
+//             $font-weight-light,
+//             'ff-meta-w06-light-italic'
+//         ),
+//         (
+//             'Normal Italic',
+//             italic,
+//             $font-weight-normal,
+//             'ff-meta-w06-normal-italic'
+//         ),
+//         ('Book Italic', italic, $font-weight-book, 'ff-meta-w06-book-italic'),
+//         (
+//             'Medium Italic',
+//             italic,
+//             $font-weight-medium,
+//             'ff-meta-w06-medium-italic'
+//         ),
+//         ('Bold Italic', italic, $font-weight-bold, 'ff-meta-w06-bold-italic'),
+//         (
+//             'Black Italic',
+//             italic,
+//             $font-weight-black,
+//             'ff-meta-w06-black-italic'
+//         ),
+//     ),
+   
+// );
+
+// @each $family, $styles in $font-families-styles {
+//     @each $style in $styles {
+//         $src: ();
+//         $src: append($src, local('#{$family} #{nth($style, 1)}'));
+
+//         @font-face {
+//             font-family: $family;
+//             font-style: nth($style, 2);
+//             font-weight: nth($style, 3);
+//             font-display: swap;
+//             src: #{$src};
+//         }
+//     }
+// }
+
+/// @type List
+$font-family-overpass: 'Overpass', sans-serif !default;
+/// @type List
+$font-family-head: $font-family-overpass !default;
+/// @type List
+$font-family-body: $font-family-overpass !default;
+
+
+/// @type Map
+/// @prop {String} key - Font Family name
+/// @prop {Number} value - Font Family value
+/// @require {Variable} $font-family-body
+/// @require {Variable} $font-family-head
+/// @require {Variable} $font-family-serif
+/// @require {Variable} $font-family-icon
+/// @require {Variable} $font-family-small
+/// @require {Variable} $font-family-mono
+/// @require {Variable} $font-family-duotone
+/// @see {Mixin} font-family
+$font-families: (
+    'default': $font-family-body,
+    'heading': $font-family-head,
+) !default;
+
+/// @type Length
+$font-size--mobile: 16px !default;
+/// @type Length
+$font-size--desktop: 18px !default;
+/// @type Length
+$font-size--1080p: 22px !default;
+/// @type Length
+$font-size--4K: 46px !default;
+/// @type Length
+$font-size--8K: 92px !default;
+
+/// @type Length
+$max-line-length: 55ch !default;
+
+/// @type Length
+$font-size--basic: 1rem !default;
+
+///@type Length
+$font-size--icon: 0.875em !default;
+
+// /// @type Number
+// $font-size-dp: 3 !default;
+// /// @type Number
+// $font-size--ratio: 9/8 !default;
+// /// @type Length
+// $font-size--alpha: $font-size--basic !default;
+// /// @type Length
+// $font-size--beta: decimal-round(
+//     ($font-size--alpha * $font-size--ratio),
+//     $font-size-dp
+// ) !default;
+// /// @type Length
+// $font-size--gamma: decimal-round(
+//     ($font-size--beta * $font-size--ratio),
+//     $font-size-dp
+// ) !default;
+// /// @type Length
+// $font-size--delta: decimal-round(
+//     ($font-size--gamma * $font-size--ratio),
+//     $font-size-dp
+// ) !default;
+// /// @type Length
+// $font-size--epsilon: decimal-round(
+//     ($font-size--delta * $font-size--ratio),
+//     $font-size-dp
+// ) !default;
+// /// @type Length
+// $font-size--zeta: decimal-round(
+//     ($font-size--epsilon * $font-size--ratio),
+//     $font-size-dp
+// ) !default;
+// /// @type Length
+// $font-size--eta: decimal-round(
+//     ($font-size--zeta * $font-size--ratio),
+//     $font-size-dp
+// ) !default;
+// /// @type Length
+// $font-size--theta: decimal-round(
+//     ($font-size--eta * $font-size--ratio),
+//     $font-size-dp
+// ) !default;
+// /// @type Length
+// $font-size--smalltype: decimal-round(
+//     ($font-size--alpha / $font-size--ratio),
+//     $font-size-dp
+// ) !default;
+// /// @type Length
+// $font-size--extrasmalltype: decimal-round(
+//     ($font-size--smalltype / $font-size--ratio),
+//     $font-size-dp
+// ) !default;
+// /// @type Length
+// $font-size--sub: decimal-round(
+//     ($font-size--extrasmalltype / $font-size--ratio),
+//     $font-size-dp
+// ) !default;
+
+// $font-size--super: 0.7em;
+
+// /// @type Number
+// $line-height-ratio--heading: 8/6 !default;
+// /// @type Number
+// $line-height-ratio--body: 13/8 !default;
+// /// @type Length
+// $line-height--sub: strip-unit($font-size--sub) !default;
+
+// /// @type Number
+// $line-height-ratio--override--alpha: strip-unit($font-size--alpha) !default;
+// /// @type Number
+// $line-height-ratio--override--beta: strip-unit($font-size--beta) !default;
+// /// @type Number
+// $line-height-ratio--override--gamma: strip-unit($font-size--gamma) !default;
+// /// @type Number
+// $line-height-ratio--override--delta: strip-unit($font-size--delta) !default;
+// /// @type Number
+// $line-height-ratio--override--epsilon: strip-unit($font-size--epsilon) !default;
+// /// @type Number
+// $line-height-ratio--override--zeta: strip-unit($font-size--zeta) !default;
+
+// @mixin alphatype() {
+//     font-size: $font-size--alpha;
+//     line-height: $line-height-ratio--body;
+//     letter-spacing: #{dynamic-tracking($font-size--alpha, $font-size--mobile)}em;
+
+//     @include media('>=desktop', '<1080p') {
+//         letter-spacing: #{dynamic-tracking(
+//                 $font-size--alpha,
+//                 $font-size--desktop
+//             )}em;
+//     }
+
+//     @include media('>=1080p', '<4K') {
+//         letter-spacing: #{dynamic-tracking($font-size--alpha, $font-size--1080p)}em;
+//     }
+
+//     @include media('>=4K', '<8K') {
+//         letter-spacing: #{dynamic-tracking($font-size--alpha, $font-size--4K)}em;
+//     }
+
+//     @include media('>=8K') {
+//         letter-spacing: #{dynamic-tracking($font-size--alpha, $font-size--8K)}em;
+//     }
+// }
+// .alpha-type {
+//     @include alphatype();
+// }
+
+// @mixin betatype() {
+//     font-size: $font-size--beta;
+//     line-height: $line-height-ratio--heading;
+//     letter-spacing: #{dynamic-tracking($font-size--beta, $font-size--mobile)}em;
+
+//     @include media('>=desktop', '<1080p') {
+//         letter-spacing: #{dynamic-tracking(
+//                 $font-size--beta,
+//                 $font-size--desktop
+//             )}em;
+//     }
+
+//     @include media('>=1080p', '<4K') {
+//         letter-spacing: #{dynamic-tracking($font-size--beta, $font-size--1080p)}em;
+//     }
+
+//     @include media('>=4K', '<8K') {
+//         letter-spacing: #{dynamic-tracking($font-size--beta, $font-size--4K)}em;
+//     }
+
+//     @include media('>=8K') {
+//         letter-spacing: #{dynamic-tracking($font-size--beta, $font-size--8K)}em;
+//     }
+// }
+// .beta-type {
+//     @include betatype();
+// }
+
+// @mixin gammatype() {
+//     font-size: $font-size--gamma;
+//     line-height: $line-height-ratio--heading;
+//     letter-spacing: #{dynamic-tracking($font-size--gamma, $font-size--mobile)}em;
+
+//     @include media('>=desktop', '<1080p') {
+//         letter-spacing: #{dynamic-tracking(
+//                 $font-size--gamma,
+//                 $font-size--desktop
+//             )}em;
+//     }
+
+//     @include media('>=1080p', '<4K') {
+//         letter-spacing: #{dynamic-tracking($font-size--gamma, $font-size--1080p)}em;
+//     }
+
+//     @include media('>=4K', '<8K') {
+//         letter-spacing: #{dynamic-tracking($font-size--gamma, $font-size--4K)}em;
+//     }
+
+//     @include media('>=8K') {
+//         letter-spacing: #{dynamic-tracking($font-size--gamma, $font-size--8K)}em;
+//     }
+// }
+// .gamma-type {
+//     @include gammatype();
+// }
+
+// @mixin deltatype() {
+//     font-size: $font-size--delta;
+//     line-height: $line-height-ratio--heading;
+//     letter-spacing: #{dynamic-tracking($font-size--delta, $font-size--mobile)}em;
+
+//     @include media('>=desktop', '<1080p') {
+//         letter-spacing: #{dynamic-tracking(
+//                 $font-size--delta,
+//                 $font-size--desktop
+//             )}em;
+//     }
+
+//     @include media('>=1080p', '<4K') {
+//         letter-spacing: #{dynamic-tracking($font-size--delta, $font-size--1080p)}em;
+//     }
+
+//     @include media('>=4K', '<8K') {
+//         letter-spacing: #{dynamic-tracking($font-size--delta, $font-size--4K)}em;
+//     }
+
+//     @include media('>=8K') {
+//         letter-spacing: #{dynamic-tracking($font-size--delta, $font-size--8K)}em;
+//     }
+// }
+// .delta-type {
+//     @include deltatype();
+// }
+
+// @mixin epsilontype() {
+//     font-size: $font-size--epsilon;
+//     line-height: $line-height-ratio--heading;
+//     letter-spacing: #{dynamic-tracking($font-size--epsilon, $font-size--mobile)}em;
+
+//     @include media('>=desktop', '<1080p') {
+//         letter-spacing: #{dynamic-tracking(
+//                 $font-size--epsilon,
+//                 $font-size--desktop
+//             )}em;
+//     }
+
+//     @include media('>=1080p', '<4K') {
+//         letter-spacing: #{dynamic-tracking(
+//                 $font-size--epsilon,
+//                 $font-size--1080p
+//             )}em;
+//     }
+
+//     @include media('>=4K', '<8K') {
+//         letter-spacing: #{dynamic-tracking($font-size--epsilon, $font-size--4K)}em;
+//     }
+
+//     @include media('>=8K') {
+//         letter-spacing: #{dynamic-tracking($font-size--epsilon, $font-size--8K)}em;
+//     }
+// }
+// .epsilon-type {
+//     @include epsilontype();
+// }
+
+// @mixin zetatype() {
+//     font-size: $font-size--zeta;
+//     line-height: $line-height-ratio--heading;
+//     letter-spacing: #{dynamic-tracking($font-size--zeta, $font-size--mobile)}em;
+
+//     @include media('>=desktop', '<1080p') {
+//         letter-spacing: #{dynamic-tracking(
+//                 $font-size--zeta,
+//                 $font-size--desktop
+//             )}em;
+//     }
+
+//     @include media('>=1080p', '<4K') {
+//         letter-spacing: #{dynamic-tracking($font-size--zeta, $font-size--1080p)}em;
+//     }
+
+//     @include media('>=4K', '<8K') {
+//         letter-spacing: #{dynamic-tracking($font-size--zeta, $font-size--4K)}em;
+//     }
+
+//     @include media('>=8K') {
+//         letter-spacing: #{dynamic-tracking($font-size--zeta, $font-size--8K)}em;
+//     }
+// }
+// .zeta-type {
+//     @include zetatype();
+// }
+
+// @mixin etatype() {
+//     font-size: $font-size--eta;
+//     line-height: $line-height-ratio--heading;
+//     letter-spacing: #{dynamic-tracking($font-size--eta, $font-size--mobile)}em;
+
+//     @include media('>=desktop', '<1080p') {
+//         letter-spacing: #{dynamic-tracking($font-size--eta, $font-size--desktop)}em;
+//     }
+
+//     @include media('>=1080p', '<4K') {
+//         letter-spacing: #{dynamic-tracking($font-size--eta, $font-size--1080p)}em;
+//     }
+
+//     @include media('>=4K', '<8K') {
+//         letter-spacing: #{dynamic-tracking($font-size--eta, $font-size--4K)}em;
+//     }
+
+//     @include media('>=8K') {
+//         letter-spacing: #{dynamic-tracking($font-size--eta, $font-size--8K)}em;
+//     }
+// }
+// .eta-type {
+//     @include etatype();
+// }
+
+// @mixin thetatype() {
+//     font-size: $font-size--theta;
+//     line-height: $line-height-ratio--heading;
+//     letter-spacing: #{dynamic-tracking($font-size--theta, $font-size--mobile)}em;
+
+//     @include media('>=desktop', '<1080p') {
+//         letter-spacing: #{dynamic-tracking(
+//                 $font-size--theta,
+//                 $font-size--desktop
+//             )}em;
+//     }
+
+//     @include media('>=1080p', '<4K') {
+//         letter-spacing: #{dynamic-tracking($font-size--theta, $font-size--1080p)}em;
+//     }
+
+//     @include media('>=4K', '<8K') {
+//         letter-spacing: #{dynamic-tracking($font-size--theta, $font-size--4K)}em;
+//     }
+
+//     @include media('>=8K') {
+//         letter-spacing: #{dynamic-tracking($font-size--theta, $font-size--8K)}em;
+//     }
+// }
+// .theta-type {
+//     @include thetatype();
+// }
+
+// @mixin smalltype() {
+//     font-size: $font-size--smalltype;
+//     line-height: $line-height-ratio--body;
+//     letter-spacing: #{dynamic-tracking(
+//             $font-size--smalltype,
+//             $font-size--mobile
+//         )}em;
+
+//     @include media('>=desktop', '<1080p') {
+//         letter-spacing: #{dynamic-tracking(
+//                 $font-size--smalltype,
+//                 $font-size--desktop
+//             )}em;
+//     }
+
+//     @include media('>=1080p', '<4K') {
+//         letter-spacing: #{dynamic-tracking(
+//                 $font-size--smalltype,
+//                 $font-size--1080p
+//             )}em;
+//     }
+
+//     @include media('>=4K', '<8K') {
+//         letter-spacing: #{dynamic-tracking(
+//                 $font-size--smalltype,
+//                 $font-size--4K
+//             )}em;
+//     }
+
+//     @include media('>=8K') {
+//         letter-spacing: #{dynamic-tracking(
+//                 $font-size--smalltype,
+//                 $font-size--8K
+//             )}em;
+//     }
+// }
+// .small-type {
+//     @include smalltype();
+// }
+
+// @mixin extrasmalltype() {
+//     font-size: $font-size--extrasmalltype;
+//     line-height: $line-height-ratio--body;
+//     letter-spacing: #{dynamic-tracking(
+//             $font-size--extrasmalltype,
+//             $font-size--mobile
+//         )}em;
+
+//     @include media('>=desktop', '<1080p') {
+//         letter-spacing: #{dynamic-tracking(
+//                 $font-size--extrasmalltype,
+//                 $font-size--desktop
+//             )}em;
+//     }
+
+//     @include media('>=1080p', '<4K') {
+//         letter-spacing: #{dynamic-tracking(
+//                 $font-size--extrasmalltype,
+//                 $font-size--1080p
+//             )}em;
+//     }
+
+//     @include media('>=4K', '<8K') {
+//         letter-spacing: #{dynamic-tracking(
+//                 $font-size--extrasmalltype,
+//                 $font-size--4K
+//             )}em;
+//     }
+
+//     @include media('>=8K') {
+//         letter-spacing: #{dynamic-tracking(
+//                 $font-size--extrasmalltype,
+//                 $font-size--8K
+//             )}em;
+//     }
+// }
+// .extra-small-type {
+//     @include extrasmalltype();
+// }
+
+// @mixin body-baseline() {
+//     @include alphatype();
+//     font-style: normal;
+//     font-weight: $font-weight-text;
+
+//     b,
+//     strong {
+//         font-weight: $font-weight-bold;
+//     }
+
+//     i,
+//     em {
+//         font-style: italic;
+//     }
+// }
+
+// @mixin content-style() {
+//     @include body-baseline();
+//     max-width: $max-line-length;
+// }
+
+// .content-style {
+//     @include content-style();
+// }
+
+// @mixin heading-style() {
+//     @include font-family('heading');
+// }
+
+// ///
+// /// Specify font-family
+// ///
+// /// @param {String} $family - Font-family value
+// ///
+// /// @require {Map} $font-families
+// ///
+// /// @example scss - One family
+// ///   @include font-family(default);
+// ///   // font-family: "Proxima Nova", sans-serif;
+// ///
+// /// @throw Error if no parameters are passed.
+// /// @throw Error if parameter passed does not match a key in $font-families.
+// ///
+// @mixin font-family($family) {
+//     @if not $family {
+//         @error "font-family() expects one parameter.";
+//     }
+
+//     @if not map-has-key($font-families, $family) {
+//         @error "There is no `font-family` named `#{$family}` in `$font-families`. `font-family` should be one of `#{map-keys($font-families)}`.";
+//     }
+
+//     font-family: map-get($font-families, $family);
+// }
+
+// @mixin h3style() {
+//     @include heading-style();
+//     @include deltatype();
+//     font-style: normal;
+//     font-weight: $font-weight-medium;
+//     margin-top: $heading-margin;
+
+//     b,
+//     strong {
+//         font-weight: $font-weight-medium;
+//     }
+// }
+
+// h3,
+// .h3-style {
+//     @include h3style();
+// }
+
+// @mixin h2style() {
+//     @include heading-style();
+//     @include epsilontype();
+//     font-style: normal;
+//     font-weight: $font-weight-medium;
+//     margin-top: $heading-margin;
+
+//     b,
+//     strong {
+//         font-weight: $font-weight-medium;
+//     }
+// }
+
+// h2,
+// .h2-style {
+//     @include h2style();
+// }
+
+// @mixin h1style() {
+//     @include heading-style();
+//     @include zetatype();
+
+//     @include media('>=tablet', '<=between') {
+//         @include etatype();
+//     }
+
+//     @include media('>between') {
+//         @include thetatype();
+//     }
+
+//     font-style: normal;
+//     font-weight: $font-weight-medium;
+
+//     b,
+//     strong {
+//         font-weight: $font-weight-medium;
+//     }
+// }
+
+// @mixin heading--centered($color) {
+//     text-align: center;
+
+//     &:after {
+//         background-color: $color;
+//         content: '';
+//         display: block;
+//         height: $measure--quarter;
+//         margin-left: auto;
+//         margin-right: auto;
+//         margin-top: $measure--half;
+//         width: $measure--large2;
+//     }
+// }
+
+// h1,
+// .h1-style {
+//     @include h1style();
+// }
+
+// h1,
+// h2,
+// h3,
+// h4,
+// h5,
+// h6 {
+//     & + h2,
+//     & + h3,
+//     & + h4,
+//     & + h5,
+//     & + h6 {
+//         margin-top: $heading-margin;
+//     }
+// }

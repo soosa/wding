@@ -17,7 +17,7 @@ gulp.task('cssTask', () =>
 );
 
 gulp.task('jsTask', () =>
-    gulp.src('src/**/*.js')
+    gulp.src('src/**/main.js')
         .pipe(babel({
             presets: ['@babel/env']
         }))
