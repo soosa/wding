@@ -139,3 +139,149 @@ $content-element-margin: $measure--threequarters !default;
 
 /// @type Length
 $max-component-line-length: 40ch !default;
+
+/// polip
+/// 
+
+
+/// @type Length
+$border-width-hairline: 1px !default;
+/// @type Length
+$border-width-default: 2px !default;
+/// @type Length
+$border-width-outline: 3px !default;
+/// @type Length
+$border-width-thick: 4px !default;
+
+/// @type String
+$border-style-default: solid !default;
+/// @type String
+$border-style-alternate: dotted !default;
+
+/// @type Length
+$border-radius-default: 0.25rem !default;
+/// @type Length
+$border-radius-thin: 0.125rem !default;
+/// @type Map
+/// @see {Mixin} border-radius
+$border-radii: (
+    'default': $border-radius-default,
+    'thin': $border-radius-thin,
+    'hairline': $border-width-hairline,
+) !default;
+
+/// @type String
+$font-display: swap !default;
+
+/// @type Number
+$font-weight-thin: 100 !default;
+/// @type Number
+$font-weight-light: 300 !default;
+/// @type Number
+$font-weight-default: 400 !default;
+/// @type Number
+$font-weight-book: 500 !default;
+/// @type Number
+$font-weight-medium: 600 !default;
+/// @type Number
+$font-weight-bold: 700 !default;
+
+/// @type Number
+$font-size-ratio: 6/5;
+
+// 16px
+/// @type Length
+/// @require {Variable} $base-font-size
+$font-size-default: 1rem !default;
+/// @type Length
+/// @require {Variable} $font-size-ratio
+/// @require {Variable} $font-size-default
+$font-size-delta: ($font-size-ratio * $font-size-default) !default;
+/// @type Length
+/// @require {Variable} $font-size-ratio
+/// @require {Variable} $font-size-delta
+$font-size-gamma: ($font-size-ratio * $font-size-delta) !default;
+/// @type Length
+/// @require {Variable} $font-size-ratio
+/// @require {Variable} $font-size-gamma
+$font-size-beta: ($font-size-ratio * $font-size-gamma) !default;
+/// @type Length
+/// @require {Variable} $font-size-ratio
+/// @require {Variable} $font-size-beta
+$font-size-alpha: ($font-size-ratio * $font-size-beta) !default;
+/// @type Length
+/// @require {Variable} $font-size-ratio
+/// @require {Variable} $font-size-beta
+$font-size-kappa: ($font-size-ratio * $font-size-alpha) !default;
+/// @type Length
+/// @require {Variable} $font-size-ratio
+/// @require {Variable} $font-size-beta
+$font-size-omicron: ($font-size-ratio * $font-size-kappa) !default;
+/// @type Length
+/// @require {Variable} $font-size-ratio
+/// @require {Variable} $font-size-default
+$font-size-small: 14px; // TOO SMALL: ($font-size-default / $font-size-ratio) !default;
+/// @type Length
+$font-size-responsive: calc(16px + (24 - 16) * (100vw - 400px) / (800 - 400));
+/// @type Length
+$font-size-banner: 3.5rem !default;
+
+// 11:8
+/// @type Number
+$line-height-default: 1.625 !default;
+// 1:√2 – aug. fourth / dim. fifth
+/// @type Number
+$line-height-augmented-fourth: 1.414 !default;
+/// @type Number
+/// @require {Variable} $line-height-aug-fourth
+$line-height-diminished-fifth: $line-height-augmented-fourth !default;
+/// @type Number
+$line-height-perfect-fifth: 1.5 !default;
+/// @type Number
+$line-height-small: 1.2 !default;
+
+/// @type Length
+$rotation-default: 10deg !default;
+
+/// @type Length
+/// @see {Mixin} transition
+$transition-duration: 0.2s !default;
+/// @type Length
+/// @see {Mixin} transition
+$transition-duration-long: 0.5s !default;
+/// @type String
+/// @see {Mixin} transition
+$transition-function: ease !default;
+
+
+/// @type Map
+/// @prop {String} key - box-shadow name
+/// @prop {Number} value - box-shadow value
+/// @see {Function} box-shadow
+$box-shadows: (
+    'alpha': 0 12px 24px 0,
+    'beta': 0 8px 16px 0,
+    'gamma': 0 6px 12px 0,
+    'delta': 0 4px 8px 0,
+    'epsilon': 0 1px 2px 0,
+    'flat': 0,
+) !default;
+
+/// @type Map
+/// @prop {Length} key - Percentage for sizing
+/// @prop {Array} value - Aspect Ratio
+$ratios: (
+    62.5%: (
+        16,
+        10,
+    ),
+    56.25%: (
+        16,
+        9,
+    ),
+    75%: (
+        4,
+        3,
+    ),
+) !default;
+

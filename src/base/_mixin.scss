@@ -81,3 +81,26 @@
         margin-right: auto;
     }
 }
+
+///
+/// Modular Typographic Scale
+///
+/// @param {Number} $font-size - Font size in rem
+///
+/// @require {Number} $font-size-default
+/// @require {Number} $line-height-default
+///
+/// @throw Error if no parameter is passed or the parameter's units are not in rem.
+///
+@mixin typographic-scale($font-size: $font-size-default) {
+    @if not $font-size or unit($font-size) != 'rem' {
+        @error "typographic-scale() expects a `font-size` parameter with `rem` units.";
+    }
+
+    $line-height: ceil($font-size / $line-height-default) * $line-height-default /
+        $font-size;
+
+    font-size: px($font-size);
+    font-size: $font-size;
+    line-height: decimal-ceil($line-height, 3);
+}

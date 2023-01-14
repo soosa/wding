@@ -15,27 +15,27 @@ html {
         scroll-behavior: auto;
     }
 
-    font-size: $font-size--mobile;
+   // font-size: $font-size--mobile;
     font-style: normal;
     font-weight: $font-weight-text;
     line-height: 1;
     text-rendering: optimizeLegibility;
 
-    @include media('>=desktop', '<1080p') {
-        font-size: $font-size--desktop;
-    }
+    // @include media('>=desktop', '<1080p') {
+    //     font-size: $font-size--desktop;
+    // }
 
-    @include media('>=1080p', '<4K') {
-        font-size: $font-size--1080p;
-    }
+    // @include media('>=1080p', '<4K') {
+    //     font-size: $font-size--1080p;
+    // }
 
-    @include media('>=4K', '<8K') {
-        font-size: $font-size--4K;
-    }
+    // @include media('>=4K', '<8K') {
+    //     font-size: $font-size--4K;
+    // }
 
-    @include media('>=8K') {
-        font-size: $font-size--8K;
-    }
+    // @include media('>=8K') {
+    //     font-size: $font-size--8K;
+    // }
 }
 
 body {
@@ -53,4 +53,92 @@ article {
     @include media('>=small') {
         grid-column: 1/-1;
     }
+}
+
+.alpha,
+%alpha {
+    @include typographic-scale($font-size-alpha);
+}
+h1 {
+    @extend %alpha !optional;
+    font-weight: $font-weight-medium;
+}
+
+.beta,
+%beta {
+    @include typographic-scale($font-size-beta);
+}
+h2 {
+    @extend %beta !optional;
+    font-weight: $font-weight-medium;
+}
+
+.gamma,
+%gamma {
+    @include typographic-scale($font-size-gamma);
+}
+h3 {
+    @extend %gamma !optional;
+    font-weight: $font-weight-medium;
+}
+
+.delta,
+%delta {
+    @include typographic-scale($font-size-delta);
+}
+h4 {
+    @extend %delta !optional;
+    font-weight: $font-weight-medium;
+}
+
+.epsilon,
+%epsilon {
+    @include typographic-scale($font-size-default);
+}
+h5 {
+    @extend %epsilon !optional;
+    font-weight: $font-weight-bold;
+}
+
+.zeta,
+%zeta {
+    @include typographic-scale($font-size-default);
+}
+h6 {
+    @extend %zeta !optional;
+    font-weight: $font-weight-bold;
+}
+
+.flex-centre {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero-img {
+    max-width: 400px;
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.hero-img--half {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2rem;
+
+    img {
+        width: 50%;
+        filter: grayscale(50%);
+    }
+}
+
+.dark-bg {
+    background-color: $color-dark-clay;
+    color: white;
+}
+
+.section-padding {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
 }
