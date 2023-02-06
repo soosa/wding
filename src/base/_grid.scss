@@ -2,7 +2,7 @@
 /// Grid
 /// @group layout
 ////
-@mixin x-column-grid($columns: 24) {
+@mixin x-column-grid($columns: 12) {
     grid-template-columns: repeat($columns, 1fr);
     grid-column-gap: 0;
 
@@ -16,6 +16,6 @@
 }
 
 @mixin standard-grid() {
-    @include x-column-grid(24);
+    @include x-column-grid(12);
     display: grid;
 }

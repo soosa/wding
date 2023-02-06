@@ -2,20 +2,20 @@
     font-family: 'Overpass';
     font-weight: $font-weight-normal;;
     font-display: swap;
-    src: url('../assets/fonts/Overpass-VariableFont_wght.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+    src: url('../moth/assets/fonts/Overpass-VariableFont_wght.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
 }   
 
 @font-face {
     font-family: 'Mrdehaviland';
     font-weight: $font-weight-normal;;
     font-display: swap;
-    src: url('../assets/fonts/MrDeHaviland-Regular.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+    src: url('../moth/assets/fonts/MrDeHaviland-Regular.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
 }
 @font-face {
     font-family: 'Garamond';
     font-weight: $font-weight-normal;;
     font-display: swap;
-    src: url('../assets/fonts/EBGaramond-VariableFont_wght.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+    src: url('../moth/assets/fonts/EBGaramond-VariableFont_wght.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
 }  
 // https://rey-fluid-demo.squarespace.com/?nochrome=true
 
@@ -29,10 +29,15 @@ h5,
 h6,
 .heading-style {
     font-family: 'Garamond', Fallback, sans-serif;
+    margin-top: 0.75rem;
+    line-height: 1.2;
 }
 
 p {
     font-family: 'Garamond', Fallback, sans-serif;
+    margin-top: 0.75rem;
+    line-height: 1.2;
+    max-width: 55ch
 }
 
 .havi {
@@ -135,15 +140,15 @@ $font-families: (
 ) !default;
 
 /// @type Length
-$font-size--mobile: 16px !default;
+$font-size--mobile: 18px !default;
 /// @type Length
-$font-size--desktop: 18px !default;
+$font-size--desktop: 16px !default;
 /// @type Length
-$font-size--1080p: 22px !default;
+$font-size--1080p: 42px !default;
 /// @type Length
-$font-size--4K: 46px !default;
+$font-size--4K: 50px !default;
 /// @type Length
-$font-size--8K: 92px !default;
+$font-size--8K: 100px !default;
 
 /// @type Length
 $max-line-length: 55ch !default;

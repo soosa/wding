@@ -15,27 +15,27 @@ html {
         scroll-behavior: auto;
     }
 
-   // font-size: $font-size--mobile;
+    font-size: $font-size--mobile;
     font-style: normal;
     font-weight: $font-weight-text;
     line-height: 1;
     text-rendering: optimizeLegibility;
 
-    // @include media('>=desktop', '<1080p') {
-    //     font-size: $font-size--desktop;
-    // }
+    @include media('>=desktop', '<1080p') {
+        font-size: $font-size--desktop;
+    }
 
-    // @include media('>=1080p', '<4K') {
-    //     font-size: $font-size--1080p;
-    // }
+    @include media('>=1080p', '<4K') {
+        font-size: $font-size--1080p;
+    }
 
-    // @include media('>=4K', '<8K') {
-    //     font-size: $font-size--4K;
-    // }
+    @include media('>=4K', '<8K') {
+        font-size: $font-size--4K;
+    }
 
-    // @include media('>=8K') {
-    //     font-size: $font-size--8K;
-    // }
+    @include media('>=8K') {
+        font-size: $font-size--8K;
+    }
 }
 
 body {
@@ -44,15 +44,13 @@ body {
 }
 
 main {
-    @include media('>=small') {
-        @include standard-grid();
-    }
+    @include standard-grid();
+
 }
 
-article {
-    @include media('>=small') {
-        grid-column: 1/-1;
-    }
+.content {
+    grid-column: 1/-1;
+    @include default-margin();
 }
 
 .alpha,
@@ -109,6 +107,10 @@ h6 {
     font-weight: $font-weight-bold;
 }
 
+p {
+   // margin: 0 0 #{$line-height-default}em;
+}
+
 .flex-centre {
     display: flex;
     flex-direction: column;
@@ -142,3 +144,35 @@ h6 {
     padding-top: 3rem;
     padding-bottom: 3rem;
 }
+
+.location,
+.ceremony {
+    @include media('>=tablet') {
+        grid-column: 4 / 10;
+    }
+}
+
+.slider {
+    grid-column: 1 / -1;
+    margin-top: 2rem;
+}
+
+.milestone {
+    span {
+        display: inline-block;
+    }
+
+    .milestone__time {
+        width: 200px;
+        border-right: 1px solid $color-text;
+    }
+
+    .fa-circle {
+
+    }
+
+    .milestone__text {
+        margin-left: 100px;
+    }
+}
+

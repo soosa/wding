@@ -9,19 +9,20 @@
 
     &:hover {
         background-color: $color-anchor;
-        color: contrasting-color($color-anchor);
+        color: white;
     }
 
     &:focus {
-        outline: $border-width-outline $border-style-default $color-black;
+        outline: $border-width-default $border-style-default $color-anchor;
     }
 
     &:active {
-        outline: $border-width-default $border-style-alternate $color-black;
+        outline: $border-width-default $border-style-alternate $color-anchor;
     }
 }
 
 
 a {
     @include anchor-reset();
+    @include anchor-inline();
 }
